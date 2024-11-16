@@ -1,0 +1,45 @@
+name: Build and Deploy to Itch.io
+
+on: push
+
+jobs:
+  build:
+    name: Build y Deploy ✨
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Cache Library
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      - name: Build project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Build
+          path: build
+
+      - name: Deploy to Itch.io
+        uses: robpc/itchio-upload-action@v1
+        with:
+          path: build/WebGL
+          project: bernardo2806/maze-runner
+          channel: webgl
+          api-key: ${{ secrets.ITCHIO_API_KEY }}
