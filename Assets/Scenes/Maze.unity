@@ -122,58 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &326087851
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 326087852}
-  - component: {fileID: 326087853}
-  m_Layer: 0
-  m_Name: ThirdPersonCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &326087852
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326087851}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &326087853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326087851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6832e30ddb8900d408b1f4ec6a1044fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentTransform: {fileID: 0}
-  rotSpeed: 0
-  tolerance: 0
-  zoomSpeed: 0
-  yAngleTol: 0
-  magAdjustment: 0
-  minZoomDist: 0
-  maxZoomDist: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +356,7 @@ MonoBehaviour:
   height: 50
   wallPrefab: {fileID: 6145358869330111504, guid: c5546d246a8be6c4bb4801525b1d4059, type: 3}
   floorPrefab: {fileID: 2205413691232782904, guid: 60a12ff1a7220a4498edf8ce3f7e0148, type: 3}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 5121033603256851890, guid: 2d4746c7e5a668849ab9e6ccb758521b, type: 3}
   goalPrefab: {fileID: 919132149155446097, guid: 233afa1a8bcd87540b2ee928c1b6d206, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -417,4 +365,3 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1444988322}
-  - {fileID: 326087852}
